@@ -1,0 +1,30 @@
+.letter-box-section {
+  width: inherit;
+}
+
+.letter-box-container {
+  margin: 0px 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.letter-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgb(102, 101, 101);
+  font-family: inherit;
+  color: white;
+  font-size: 2rem;
+  border-radius: 3px;
+  width: 5rem;
+  height: 5rem;
+  background: rgba(61, 163, 158, 0.603);
+  box-shadow: 5px 5px 5px 5px rgba(49, 48, 48, 0.603);
+  text-transform: uppercase;
+}
+
+.letter-box:hover {
+  border: 1px solid rgb(79, 196, 137);
+}

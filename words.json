@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "word": "action",
+    "description": "The process of being active, energetic activity"
+  },
+  {
+    "id": 2,
+    "word": "border",
+    "description": "The line that separates one area, state, or country from another"
+  },
+  {
+    "id": 3,
+    "word": "corner",
+    "description": "The place where two converging lines or surfaces meet"
+  },
+  {
+    "id": 4,
+    "word": "effect",
+    "description": "A result, an influence"
+  },
+  {
+    "id": 5,
+    "word": "famous",
+    "description": "Well or widely known"
+  },
+  {
+    "id": 6,
+    "word": "island",
+    "description": "A landmass entirely surrounded by water"
+  },
+  {
+    "id": 7,
+    "word": "leader",
+    "description": "One who is in charge or in command of others"
+  },
+  {
+    "id": 8,
+    "word": "person",
+    "description": "A living human, an individual of specified character"
+  },
+  {
+    "id": 9,
+    "word": "remote",
+    "description": "Located far away, distant in space"
+  },
+  {
+    "id": 10,
+    "word": "simple",
+    "description": "Easy to understand"
+  },
+  {
+    "id": 11,
+    "word": "ticket",
+    "description": "A paper slip or card indicating that its holder has paid for or is entitled to a specified service, right, or consideration"
+  },
+  {
+    "id": 12,
+    "word": "winter",
+    "description": "Usually the coldest season of the year"
+  }
+]

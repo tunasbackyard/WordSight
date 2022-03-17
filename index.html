@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/items/navbar.css" />
+    <link rel="stylesheet" href="css/items/letter-box-section.css" />
+    <link rel="stylesheet" href="css/items/info-section.css" />
+    <link rel="stylesheet" href="css/items/question-section.css" />
+    <link rel="stylesheet" href="css/items/start-section.css" />
+    <link rel="stylesheet" href="css/items/time-over-section.css">
+    <title>WordSight</title>
+  </head>
+  <body>
+    <header>
+      <nav class="primary-navigation">
+        <div class="text-logo">WordSight</div>
+        <div class="options-container">
+          <ul class="options-lst">
+            <li class="option" id="restart-btn" title="Restart Game">🔄</li>
+            <li class="option" id="rules-btn" title="Game Rules">📔</li>
+            <li class="option" id="dev-btn" title="Developer">👩‍💻</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="letter-box-section">
+        <div class="letter-box-container">
+          <input class="letter-box" maxlength="1" id="box-1" />
+          <input class="letter-box" maxlength="1" id="box-2" />
+          <input class="letter-box" maxlength="1" id="box-3" />
+          <input class="letter-box" maxlength="1" id="box-4" />
+          <input class="letter-box" maxlength="1" id="box-5" />
+          <input class="letter-box" maxlength="1" id="box-6" />
+        </div>
+      </section>
+      <section class="question-section">
+        <div class="question-container">
+          <p class="question" id="question">
+            the process of being active, energetic activity
+          </p>
+        </div>
+      </section>
+      <section class="info-section">
+        <div class="info-container">
+          <div class="time-container"><p id="time">2:00</p></div>
+          <div class="score-container">
+            <p id="score">0</p>
+          </div>
+          <div class="pass-container">
+            <button id="pass-btn">↪ Pass</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section id="start-section" class="modal">
+      <div class="start-container">
+        <button id="start-btn">
+          <!--120000-->
+          Start Game
+        </button>
+        <li class="option" id="rules-btn">📔 Game Rules</li>
+        <a href="https://github.com/neglux" target="_blank"><li class="option" id="about-btn"">👩‍💻 Developer</li></a>
+      </div>
+    </section>
+    <section id="time-over-section" class="modal hidden">
+      <div class="time-over-container">
+        <span class="to-title">Time is Over
+        </span>
+        <div class="to-score-container">
+          <span class="highscore">Your score:&nbsp;</span>
+          <p id="to-score">0</p>
+        </div>
+        <button id="to-restart-btn">Restart Game</button>
+      </div>
+    </section>
+    <script type="text/javascript" src="words.json"></script>
+    <script type="text/javascript" src="/scripts/script.js"></script>
+  </body>
+</html>
