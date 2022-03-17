@@ -42,6 +42,7 @@ fetch('words.json')
       setQuestion(getRandomQuestionIx(), json);
       DOM.startSection.classList.add('hidden');
       startTimer(TIMER_MINUTE, TIMER_SECOND);
+      moveCursorToFirst();
     });
     DOM.passBtn.addEventListener('click', function () {
       setQuestion(getRandomQuestionIx(), json);
@@ -66,7 +67,6 @@ fetch('words.json')
       ) {
         e.target.nextElementSibling.focus();
       }
-      console.log(userInput, inputCount);
       if (areBoxesFilled(inputCount)) {
         if (isInputTrue(userInput, Question)) {
           increaseScore(1000);
@@ -78,12 +78,16 @@ fetch('words.json')
         }
         userInput = '';
         inputCount = 0;
+        moveCursorToFirst();
       }
     });
   });
 
+function moveCursorToFirst() {
+  DOM.letterBox[0].focus();
+}
+
 function isInputTrue(input, question) {
-  console.log(question.word);
   if (input === question.word) {
     return true;
   }
