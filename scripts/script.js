@@ -5,6 +5,10 @@
 //   .then(response => response.json())
 //   .then(json => console.log(json));
 
+const TIMER_MINUTE = 2;
+const TIMER_SECOND = 0;
+const INITIAL_SCORE = 0;
+
 const DOM = {
   getElements() {
     this.startBtn = document.querySelector('#start-btn');
@@ -28,7 +32,7 @@ const Question = {
 };
 
 const User = {
-  score: 0,
+  score: INITIAL_SCORE,
 };
 
 fetch('words.json')
@@ -37,7 +41,7 @@ fetch('words.json')
     DOM.startBtn.addEventListener('click', function () {
       setQuestion(getRandomQuestionIx(), json);
       DOM.startSection.classList.add('hidden');
-      startTimer(2, 0);
+      startTimer(TIMER_MINUTE, TIMER_SECOND);
     });
     DOM.passBtn.addEventListener('click', function () {
       setQuestion(getRandomQuestionIx(), json);
@@ -45,8 +49,10 @@ fetch('words.json')
     });
     DOM.restartBtn.addEventListener('click', function () {
       setQuestion(getRandomQuestionIx(), json);
+      resetScore();
+      writeScore(User.score);
       DOM.timeIsOver.classList.add('hidden');
-      startTimer(2, 0);
+      startTimer(TIMER_MINUTE, TIMER_SECOND);
     });
     let inputCount = 0;
     let userInput = '';
@@ -99,6 +105,10 @@ function clearBoxes(boxes) {
 
 function increaseScore(point) {
   User.score += point;
+}
+
+function resetScore() {
+  User.score = 0;
 }
 
 function writeScore(score) {
