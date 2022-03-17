@@ -52,6 +52,7 @@ fetch('words.json')
       setQuestion(getRandomQuestionIx(), json);
       resetScore();
       writeScore(User.score);
+      moveCursorToFirst();
       DOM.timeIsOver.classList.add('hidden');
       startTimer(TIMER_MINUTE, TIMER_SECOND);
     });

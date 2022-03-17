@@ -5,9 +5,34 @@
     "description": "The process of being active, energetic activity"
   },
   {
+    "id": 13,
+    "word": "august",
+    "description": "The eighth month of the year in the Gregorian calendar"
+  },
+  {
+    "id": 14,
+    "word": "battle",
+    "description": "An encounter between opposing forces"
+  },
+  {
     "id": 2,
     "word": "border",
     "description": "The line that separates one area, state, or country from another"
+  },
+  {
+    "id": 15,
+    "word": "bridge",
+    "description": "A structure spanning and providing passage over a gap or barrier, such as a river or roadway."
+  },
+  {
+    "id": 16,
+    "word": "circle",
+    "description": " A plane curve everywhere equidistant from a given fixed point, the center."
+  },
+  {
+    "id": 17,
+    "word": "common",
+    "description": "Belonging equally to or shared equally by two or more"
   },
   {
     "id": 3,
@@ -15,9 +40,29 @@
     "description": "The place where two converging lines or surfaces meet"
   },
   {
+    "id": 18,
+    "word": "decade",
+    "description": "A period of ten years."
+  },
+  {
+    "id": 19,
+    "word": "doctor",
+    "description": "A person who is licensed to practice medicine"
+  },
+  {
     "id": 4,
     "word": "effect",
     "description": "A result, an influence"
+  },
+  {
+    "id": 20,
+    "word": "empire",
+    "description": "A political unit having an extensive territory or comprising a number of territories or nations and ruled by a single supreme authority"
+  },
+  {
+    "id": 21,
+    "word": "expert",
+    "description": "A person with a high degree of skill in or knowledge of a certain subject"
   },
   {
     "id": 5,
