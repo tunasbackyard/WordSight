@@ -14,7 +14,6 @@ body {
   background: rgb(58, 57, 57);
   color: #fff;
   font-family: 'Work Sans', sans-serif;
-  min-width: 550px;
 }
 
 header {
@@ -81,6 +80,7 @@ main {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-width: 1100px;
   padding: 5em 2em;
 }
 
@@ -93,8 +93,8 @@ main {
   color: white;
   font-size: 2rem;
   border-radius: 3px;
-  width: 5rem;
-  height: 5rem;
+  width: 3em;
+  height: 3em;
   background: rgba(61, 163, 158, 0.603);
   box-shadow: 5px 5px 5px 5px rgba(49, 48, 48, 0.603);
   text-transform: uppercase;
@@ -109,9 +109,24 @@ main {
   border: 2.9px solid rgb(221, 248, 101);
 }
 
-@media (min-width: 1000px) {
-  .letter-box-container {
-    width: 60%;
+@media (max-width: 800px) {
+  .letter-box {
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+
+@media (max-width: 550px) {
+  .letter-box {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+@media (max-width: 465px) {
+  .letter-box {
+    width: 1.5em;
+    height: 1.5em;
   }
 }
 
