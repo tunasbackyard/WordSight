@@ -5,7 +5,7 @@
 //   .then(response => response.json())
 //   .then(json => console.log(json));
 
-const TIMER_MINUTE = 2;
+const TIMER_MINUTE = 1;
 const TIMER_SECOND = 0;
 const INITIAL_SCORE = 0;
 
@@ -21,6 +21,7 @@ const DOM = {
     this.restartBtn = document.querySelector('#to-restart-btn');
     this.restartBtnIcon = document.querySelector('#restart-btn');
     this.timeIsOver = document.querySelector('#time-over-section');
+    this.lastScore = document.querySelector('#to-score');
     this.score = document.querySelector('#score');
   },
 };
@@ -35,6 +36,8 @@ const Question = {
 const User = {
   score: INITIAL_SCORE,
 };
+
+writeInitTime(TIMER_MINUTE, TIMER_SECOND);
 
 fetch('words.json')
   .then(response => response.json())
@@ -138,12 +141,14 @@ function resetScore() {
 
 function writeScore(score) {
   DOM.score.textContent = score;
+  DOM.lastScore.textContent = score;
 }
 
 let timer;
 function startTimer(minute, second) {
   timer = setInterval(function () {
     if (isTimerFinished(minute, second)) {
+      writeScore(User.score);
       DOM.timeIsOver.classList.remove('hidden');
     }
     if (minute === 0 && second === 0) {
