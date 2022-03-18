@@ -19,6 +19,7 @@ const DOM = {
     this.question = document.querySelector('#question');
     this.passBtn = document.querySelector('#pass-btn');
     this.restartBtn = document.querySelector('#to-restart-btn');
+    this.restartBtnIcon = document.querySelector('#restart-btn');
     this.timeIsOver = document.querySelector('#time-over-section');
     this.score = document.querySelector('#score');
   },
@@ -38,6 +39,8 @@ const User = {
 fetch('words.json')
   .then(response => response.json())
   .then(function (json) {
+    let inputCount = 0;
+    let userInput = '';
     DOM.startBtn.addEventListener('click', function () {
       setQuestion(getRandomQuestionIx(), json);
       DOM.startSection.classList.add('hidden');
@@ -49,15 +52,13 @@ fetch('words.json')
       clearBoxes(DOM.letterBox);
     });
     DOM.restartBtn.addEventListener('click', function () {
-      setQuestion(getRandomQuestionIx(), json);
-      resetScore();
-      writeScore(User.score);
-      moveCursorToFirst();
+      resetGame(inputCount, userInput, json);
       DOM.timeIsOver.classList.add('hidden');
       startTimer(TIMER_MINUTE, TIMER_SECOND);
     });
-    let inputCount = 0;
-    let userInput = '';
+    DOM.restartBtnIcon.addEventListener('click', function () {
+      resetGame(inputCount, userInput, json);
+    });
     DOM.letterBoxContainer.addEventListener('input', function (e) {
       userInput += DOM.letterBox[inputCount].value;
       inputCount += 1;
@@ -83,6 +84,23 @@ fetch('words.json')
       }
     });
   });
+
+function resetGame(inputCount, userInput, json) {
+  clearBoxes(DOM.letterBox);
+  setQuestion(getRandomQuestionIx(), json);
+  userInput = '';
+  inputCount = 0;
+  moveCursorToFirst();
+  resetScore();
+  writeScore(User.score);
+  clearInterval(timer);
+  writeInitTime(TIMER_MINUTE, TIMER_SECOND);
+  startTimer(TIMER_MINUTE, TIMER_SECOND);
+}
+
+function writeInitTime(minute, second) {
+  DOM.time.textContent = `${minute}:0${second}`;
+}
 
 function moveCursorToFirst() {
   DOM.letterBox[0].focus();
@@ -120,8 +138,9 @@ function writeScore(score) {
   DOM.score.textContent = score;
 }
 
+let timer;
 function startTimer(minute, second) {
-  const timer = setInterval(function () {
+  timer = setInterval(function () {
     if (isTimerFinished(minute, second)) {
       DOM.timeIsOver.classList.remove('hidden');
     }
