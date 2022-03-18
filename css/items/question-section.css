@@ -1,5 +1,10 @@
+.question-section {
+  width: 100%;
+}
+
 .question-container {
-  margin: 50px 250px;
+  width: 100%;
+  padding: 0 1em 5em 1em;
   font-size: 1.2rem;
 }
 

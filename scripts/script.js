@@ -36,7 +36,7 @@ const Question = {
 const User = {
   score: INITIAL_SCORE,
 };
-
+let timer;
 writeInitTime(TIMER_MINUTE, TIMER_SECOND);
 
 fetch('words.json')
@@ -151,7 +151,6 @@ function writeScore(score) {
   DOM.lastScore.textContent = score;
 }
 
-let timer;
 function startTimer(minute, second) {
   timer = setInterval(function () {
     if (isTimerFinished(minute, second)) {
