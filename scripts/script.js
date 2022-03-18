@@ -53,6 +53,9 @@ fetch('words.json')
     });
     DOM.passBtn.addEventListener('click', function () {
       checkQuestion(getRandomQuestionIx(), showedQuestions, json);
+      moveCursorToFirst();
+      userInput = '';
+      inputCount = 0;
       clearBoxes(DOM.letterBox);
     });
     DOM.restartBtn.addEventListener('click', function () {
