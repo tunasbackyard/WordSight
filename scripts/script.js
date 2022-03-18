@@ -61,7 +61,6 @@ fetch('words.json')
     DOM.restartBtn.addEventListener('click', function () {
       resetGame(inputCount, userInput, showedQuestions, json);
       DOM.timeIsOver.classList.add('hidden');
-      startTimer(TIMER_MINUTE, TIMER_SECOND);
     });
     DOM.restartBtnIcon.addEventListener('click', function () {
       resetGame(inputCount, userInput, showedQuestions, json);
