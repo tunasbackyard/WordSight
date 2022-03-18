@@ -114,6 +114,10 @@ function moveCursorToFirst() {
   DOM.letterBox[0].focus();
 }
 
+function focusOnRestart() {
+  DOM.restartBtn.focus();
+}
+
 function isInputTrue(input, question) {
   if (input === question.word) {
     return true;
@@ -153,6 +157,7 @@ function startTimer(minute, second) {
     if (isTimerFinished(minute, second)) {
       writeScore(User.score);
       DOM.timeIsOver.classList.remove('hidden');
+      focusOnRestart();
     }
     if (minute === 0 && second === 0) {
     } else {
