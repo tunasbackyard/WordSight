@@ -41,23 +41,24 @@ fetch('words.json')
   .then(function (json) {
     let inputCount = 0;
     let userInput = '';
+    const showedQuestions = [];
     DOM.startBtn.addEventListener('click', function () {
-      setQuestion(getRandomQuestionIx(), json);
+      checkQuestion(getRandomQuestionIx(), showedQuestions, json);
       DOM.startSection.classList.add('hidden');
       startTimer(TIMER_MINUTE, TIMER_SECOND);
       moveCursorToFirst();
     });
     DOM.passBtn.addEventListener('click', function () {
-      setQuestion(getRandomQuestionIx(), json);
+      checkQuestion(getRandomQuestionIx(), showedQuestions, json);
       clearBoxes(DOM.letterBox);
     });
     DOM.restartBtn.addEventListener('click', function () {
-      resetGame(inputCount, userInput, json);
+      resetGame(inputCount, userInput, showedQuestions, json);
       DOM.timeIsOver.classList.add('hidden');
       startTimer(TIMER_MINUTE, TIMER_SECOND);
     });
     DOM.restartBtnIcon.addEventListener('click', function () {
-      resetGame(inputCount, userInput, json);
+      resetGame(inputCount, userInput, showedQuestions, json);
     });
     DOM.letterBoxContainer.addEventListener('input', function (e) {
       userInput += DOM.letterBox[inputCount].value;
@@ -74,7 +75,7 @@ fetch('words.json')
           increaseScore(1000);
           writeScore(User.score);
           clearBoxes(DOM.letterBox);
-          setQuestion(getRandomQuestionIx(), json);
+          checkQuestion(getRandomQuestionIx(), showedQuestions, json);
         } else {
           clearBoxes(DOM.letterBox);
         }
@@ -85,9 +86,9 @@ fetch('words.json')
     });
   });
 
-function resetGame(inputCount, userInput, json) {
+function resetGame(inputCount, userInput, array, json) {
   clearBoxes(DOM.letterBox);
-  setQuestion(getRandomQuestionIx(), json);
+  checkQuestion(getRandomQuestionIx(), array, json);
   userInput = '';
   inputCount = 0;
   moveCursorToFirst();
@@ -172,7 +173,18 @@ function isTimerFinished(minute, second) {
 }
 
 function getRandomQuestionIx() {
-  return Math.trunc(Math.random() * 11) + 1;
+  return Math.trunc(Math.random() * 20) + 1;
+}
+
+function addToShowedList(index, array) {
+  array.push(index);
+}
+
+function isShowed(index, array) {
+  if (array.includes(index)) {
+    return true;
+  }
+  return false;
 }
 
 function setQuestion(index, json) {
@@ -180,4 +192,13 @@ function setQuestion(index, json) {
   Question.word = json[index].word;
   Question.description = json[index].description;
   DOM.question.textContent = Question.description;
+}
+
+function checkQuestion(index, array, json) {
+  if (!isShowed(index, array)) {
+    setQuestion(index, json);
+    addToShowedList(index, array);
+  } else {
+    checkQuestion(getRandomQuestionIx(), array, json);
+  }
 }
