@@ -88,6 +88,7 @@ fetch('words.json')
 
 function resetGame(inputCount, userInput, array, json) {
   clearBoxes(DOM.letterBox);
+  array.splice(0, array.length);
   checkQuestion(getRandomQuestionIx(), array, json);
   userInput = '';
   inputCount = 0;
