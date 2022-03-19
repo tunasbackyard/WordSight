@@ -118,6 +118,7 @@ function focusOnRestart() {
 }
 
 function isInputTrue(input, question) {
+  input = input.toLowerCase();
   if (input === question.word) {
     return true;
   }
