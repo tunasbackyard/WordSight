@@ -11,10 +11,13 @@
 
 .start-container {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   top: 30%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
 
@@ -32,6 +35,14 @@
 #start-btn:hover {
   color: white;
   cursor: pointer;
+}
+
+.dev-link {
+  transition: all 0.5s ease;
+}
+
+.dev-link:hover {
+  color: black;
 }
 
 .hidden {

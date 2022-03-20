@@ -5,9 +5,10 @@
   margin: 0;
   box-sizing: border-box;
 }
-a {
+a,
+a:visited {
   text-decoration: none;
-  color: inherit;
+  color: #fff;
 }
 
 body {
@@ -35,8 +36,12 @@ header {
 }
 
 .option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 5px;
-  padding: 5px;
+  padding: 0.5em;
+  color: #fff;
   transition: all 0.5s ease;
   margin-bottom: 5px;
   background: transparent;
