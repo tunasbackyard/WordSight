@@ -145,6 +145,12 @@ async function inputFailAnimationHandler(box) {
   box.classList.remove('box--fail');
 }
 
+async function scoreIncreaseAnimationHandler(element) {
+  element.parentElement.classList.add('score--increase');
+  await sleep(300);
+  element.parentElement.classList.remove('score--increase');
+}
+
 function increaseScore(point) {
   User.score += point;
 }
@@ -154,6 +160,7 @@ function resetScore() {
 }
 
 function writeScore(score) {
+  scoreIncreaseAnimationHandler(DOM.score);
   DOM.score.textContent = score;
   DOM.lastScore.textContent = score;
 }

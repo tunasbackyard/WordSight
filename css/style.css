@@ -198,6 +198,16 @@ main {
   font-weight: bolder;
 }
 
+.score--increase {
+  animation: score-increase 0.7s ease-in-out;
+}
+
+@keyframes score-increase {
+  100% {
+    transform: scale(1.5);
+  }
+}
+
 #score {
   letter-spacing: 2px;
 }
