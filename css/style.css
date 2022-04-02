@@ -114,6 +114,20 @@ main {
   border: 2.9px solid rgb(221, 248, 101);
 }
 
+.box--fail {
+  border: 2px solid red;
+  animation: fail 0.2s ease;
+}
+
+@keyframes fail {
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
 @media (max-width: 800px) {
   .letter-box {
     width: 2.5em;

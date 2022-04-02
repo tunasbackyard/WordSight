@@ -82,6 +82,7 @@ fetch('words.json')
           clearBoxes(DOM.letterBox);
           checkQuestion(getRandomQuestionIx(), showedQuestions, json);
         } else {
+          DOM.letterBox.forEach(box => inputFailAnimationHandler(box));
           clearBoxes(DOM.letterBox);
         }
         userInput = '';
@@ -136,6 +137,12 @@ function clearBoxes(boxes) {
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].value = '';
   }
+}
+
+async function inputFailAnimationHandler(box) {
+  box.classList.add('box--fail');
+  await sleep(300);
+  box.classList.remove('box--fail');
 }
 
 function increaseScore(point) {
@@ -214,4 +221,8 @@ function checkQuestion(index, array, json) {
   } else {
     checkQuestion(getRandomQuestionIx(), array, json);
   }
+}
+
+function sleep(milliseconds) {
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
