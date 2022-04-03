@@ -12,55 +12,42 @@ a:visited {
 }
 
 body {
-  background: rgb(58, 57, 57);
+  background: #3a3939;
   color: #fff;
   font-family: 'Work Sans', sans-serif;
 }
 
-header {
-  width: 100%;
-  height: 10vh;
-}
-
-.primary-navigation {
+.nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
-.options-lst {
-  display: flex;
-  padding: 0px 20px 0px 0px;
-  flex-direction: row;
-  list-style: none;
-}
-
-.option {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  padding: 0.5em;
-  color: #fff;
-  transition: all 0.5s ease;
-  margin-bottom: 5px;
-  background: transparent;
-}
-
-.option:hover {
-  border-radius: 5px;
-  background: rgb(207, 207, 207);
-  color: black;
-  cursor: pointer;
-}
-
-.text-logo {
+.nav__logo {
   padding: 10px 0px 0px 20px;
+  cursor: pointer;
   font-family: 'Wendy One', sans-serif;
   font-size: 2.3rem;
 }
 
-.text-logo:hover {
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  padding-right: 20px;
+  list-style: none;
+}
+
+.nav__link {
+  padding: 0.5em;
+  color: #fff;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+.nav__link:hover {
+  border-radius: 5px;
+  background: #cfcfcf;
+  color: black;
   cursor: pointer;
 }
 
