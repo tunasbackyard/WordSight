@@ -11,16 +11,16 @@ const INITIAL_SCORE = 0;
 
 const DOM = {
   getElements() {
+    this.startSection = document.querySelector('#start');
     this.startBtn = document.querySelector('#start-btn');
-    this.startSection = document.querySelector('#start-section');
-    this.letterBoxContainer = document.querySelector('.letter-box-container');
-    this.letterBox = document.querySelectorAll('.letter-box');
+    this.letterBoxContainer = document.querySelector('.box__container');
+    this.letterBox = document.querySelectorAll('.box__letter');
     this.time = document.querySelector('#time');
     this.question = document.querySelector('#question');
     this.passBtn = document.querySelector('#pass-btn');
+    this.timeIsOver = document.querySelector('#end');
     this.restartBtn = document.querySelector('#to-restart-btn');
     this.restartBtnIcon = document.querySelector('#restart-btn');
-    this.timeIsOver = document.querySelector('#time-over-section');
     this.lastScore = document.querySelector('#to-score');
     this.score = document.querySelector('#score');
   },

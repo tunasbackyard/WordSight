@@ -23,54 +23,54 @@
       </nav>
     </header>
     <main>
-      <section class="letter-box-section">
-        <div class="letter-box-container">
-          <input class="letter-box" maxlength="1" id="box-1" />
-          <input class="letter-box" maxlength="1" id="box-2" />
-          <input class="letter-box" maxlength="1" id="box-3" />
-          <input class="letter-box" maxlength="1" id="box-4" />
-          <input class="letter-box" maxlength="1" id="box-5" />
-          <input class="letter-box" maxlength="1" id="box-6" />
+      <section class="box">
+        <div class="box__container">
+          <input class="box__letter" maxlength="1" id="box-1" />
+          <input class="box__letter" maxlength="1" id="box-2" />
+          <input class="box__letter" maxlength="1" id="box-3" />
+          <input class="box__letter" maxlength="1" id="box-4" />
+          <input class="box__letter" maxlength="1" id="box-5" />
+          <input class="box__letter" maxlength="1" id="box-6" />
         </div>
       </section>
-      <section class="question-section">
-        <div class="question-container">
-          <p class="question" id="question">
+      <section class="question">
+        <div class="question__container">
+          <p class="question__text" id="question">
             the process of being active, energetic activity
           </p>
         </div>
       </section>
-      <section class="info-section">
-        <div class="info-container">
-          <div class="time-container"><p id="time">2:00</p></div>
-          <div class="score-container">
+      <section class="info">
+        <div class="info__container">
+          <div class="info__time"><p id="time">2:00</p></div>
+          <div class="info__score">
             <p id="score">0</p>
           </div>
-          <div class="pass-container">
-            <button id="pass-btn">↪ Pass</button>
+          <div class="info__pass">
+            <button class="info__btn" id="pass-btn">↪ Pass</button>
           </div>
         </div>
       </section>
     </main>
-    <section id="start-section" class="modal">
-      <div class="start-container">
-        <button id="start-btn">
+    <section id="start" class="modal">
+      <div class="start__container">
+        <button class="modal--btn" id="start-btn">
           <!--120000-->
           Start Game
         </button>
         <li class="nav__link" id="rules-btn">📔 Game Rules</li>
-        <li class="nav__link" id="about-btn""><a class="dev-link" href="https://github.com/neglux" target="_blank">👨‍💻 Developer</a></li>
+        <li class="nav__link" id="about-btn""><a class="dev__link" href="https://github.com/neglux" target="_blank">👨‍💻 Developer</a></li>
       </div>
     </section>
-    <section id="time-over-section" class="modal hidden">
-      <div class="time-over-container">
-        <span class="to-title">Time is Over
+    <section id="end" class="modal hidden">
+      <div class="end__container">
+        <span class="end__title">Time is Over
         </span>
-        <div class="to-score-container">
-          <span class="highscore">Your score:&nbsp;</span>
+        <div class="end__score">
+          <span class="end__highscore">Your score:&nbsp;</span>
           <p id="to-score">0</p>
         </div>
-        <button id="to-restart-btn">Restart Game</button>
+        <button class="modal--btn" id="to-restart-btn">Restart Game</button>
       </div>
     </section>
     <script type="text/json" src="words.json"></script>
